@@ -1,0 +1,30 @@
+GET http://localhost:3001/user_management/?&sort=NORMAL&page_no=1&search=
+
+###
+POST  http://localhost:3001/user_management/
+Content-Type: application/json
+
+{
+    "id": "a1bec8ec-2029-11ef-8227-9a7bb5ad01c8",
+    "name": "Shubham",
+    "DOB": "22-07-2002",
+    "contact_no": "9999967569",
+    "email": "shubham@gmail.com",
+    "user_description": "Shubham is a good smart boy."
+
+}
+
+###
+PUT http://localhost:3001/user_management/890e8400-e29b-41d4-a716-4466554400034
+Content-Type: application/json
+
+{
+    "name": "Raman",
+    "DOB": "2008-07-16",
+    "contact_no": "5634781290",
+    "email": "raman@gmail.com",
+    "user_description": "Raman is good writer in english language"
+}
+
+###
+DELETE http://localhost:3001/user_management/550e8400-e29b-41d4-a716-446655440001

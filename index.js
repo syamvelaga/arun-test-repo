@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const server_instance = express();
 const sqlite3 = require("sqlite3");
 const path = require("path");
 const { open } = require("sqlite");
 const dbPath = path.join(__dirname, "user_details.db");
 server_instance.use(express.json());
+server_instance.use(cors());
 let dataBase = null;
 
 const initialize_DataBase_and_Server = async () => {
@@ -13,8 +15,8 @@ const initialize_DataBase_and_Server = async () => {
       filename: dbPath,
       driver: sqlite3.Database,
     });
-    server_instance.listen(3001, () => {
-      console.log("sever is running on http://localhost:3001");
+    server_instance.listen(3002, () => {
+      console.log("sever is running on http://localhost:3002");
     });
   } catch (error) {
     console.log(`DataBase Error ${error.message}`);

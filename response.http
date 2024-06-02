@@ -1,7 +1,7 @@
-GET http://localhost:3001/user_management/?&sort=NORMAL&page_no=1&search=
+GET http://localhost:3002/user_management/?&sort=NORMAL&page_no=1&search=
 
 ###
-POST  http://localhost:3001/user_management/
+POST  http://localhost:3002/user_management/
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3001/user_management/890e8400-e29b-41d4-a716-4466554400034
+PUT http://localhost:3002/user_management/890e8400-e29b-41d4-a716-4466554400034
 Content-Type: application/json
 
 {
@@ -27,4 +27,4 @@ Content-Type: application/json
 }
 
 ###
-DELETE http://localhost:3001/user_management/550e8400-e29b-41d4-a716-446655440001
+DELETE http://localhost:3002/user_management/550e8400-e29b-41d4-a716-446655440001

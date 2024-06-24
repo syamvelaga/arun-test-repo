@@ -60,7 +60,6 @@ server_instance.get("/user_management/", async (request, response) => {
 
 server_instance.post("/user_management/", async (request, response) => {
   const { id, name, DOB, contact_no, email, user_description } = request.body;
-  const splitDate = DOB.split("-").reverse(-1).join("-");
   if (!id || !name || !DOB || !contact_no || !email || !user_description) {
     response
       .status(400)
@@ -73,7 +72,7 @@ server_instance.post("/user_management/", async (request, response) => {
       await dataBase.run(postUserDetails, [
         id,
         name,
-        splitDate,
+        DOB,
         contact_no,
         email,
         user_description,
@@ -139,4 +138,21 @@ server_instance.delete("/user_management/:id/", async (request, response) => {
     await dataBase.run(deleteUser, [getExistUser.id]);
     response.status(200).send("User Deleted Successfully");
   }
+});
+
+server_instance.delete("/user_management/", async (req, res) => {
+  try {
+    const deleteAllUsersQuery = "DELETE FROM user";
+    await database.run(deleteAllUsersQuery);
+    res.status(200).send("All users deleted successfully");
+  } catch (error) {
+    console.error("Error deleting all users:", error);
+    res.status(500).send("An error occurred while deleting all users.");
+  }
+});
+
+// Global error handling middleware
+server_instance.use((err, req, res, next) => {
+  console.error("Unhandled error:", err);
+  res.status(500).send("Internal server error.");
 });

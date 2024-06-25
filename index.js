@@ -5,9 +5,22 @@ const sqlite3 = require("sqlite3");
 const path = require("path");
 const { open } = require("sqlite");
 const dbPath = path.join(__dirname, "user_details.db");
-server_instance.use(express.json());
-server_instance.use(cors());
 let dataBase = null;
+const corsOptions = {
+  origin: [
+    "http://localhost:3000",
+    "http://localhost:3001",
+    "http://localhost:3002",
+    "http://localhost:3003",
+    "http://localhost:3004",
+    "http://localhost:3005",
+  ],
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD", "OPTIONS"],
+  credentials: true,
+};
+
+server_instance.use(cors(corsOptions));
+server_instance.use(express.json());
 
 const initialize_DataBase_and_Server = async () => {
   try {
@@ -143,7 +156,7 @@ server_instance.delete("/user_management/:id/", async (request, response) => {
 server_instance.delete("/user_management/", async (req, res) => {
   try {
     const deleteAllUsersQuery = "DELETE FROM user";
-    await database.run(deleteAllUsersQuery);
+    await dataBase.run(deleteAllUsersQuery);
     res.status(200).send("All users deleted successfully");
   } catch (error) {
     console.error("Error deleting all users:", error);

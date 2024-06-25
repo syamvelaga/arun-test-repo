@@ -14,16 +14,22 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:3002/user_management/890e8400-e29b-41d4-a716-4466554400034
+PUT http://localhost:3002/user_management/1f86499d-d594-4605-9b06-8cf154059d8d
 Content-Type: application/json
 
+
 {
-    "name": "Raman",
-    "DOB": "2008-07-16",
-    "contact_no": "5634781290",
-    "email": "raman@gmail.com",
-    "user_description": "Raman is good writer in english language"
+    "name": "Panoti",
+    "DOB": "2024-06-01",
+    "contact_no": "123454321",
+    "email": "panoti@gmai.com",
+    "user_description": "I am Pnoti"
 }
 
 ###
-DELETE http://localhost:3002/user_management/6123c9e5-18e6-4b49-83b4-39ac472f3128
+DELETE http://localhost:3002/user_management/1f86499d-d594-4605-9b06-8cf154059d8d
+
+### 
+
+
+DELETE http://localhost:3002/user_management

@@ -1,7 +1,7 @@
 GET http://localhost:3002/user_management/?&sort=NORMAL&page_no=1&search=
 
 ###
-POST  http://localhost:3002/user_management/
+POST  http://localhost:3000/user_management/
 Content-Type: application/json
 
 {
@@ -32,4 +32,4 @@ DELETE http://localhost:3002/user_management/1f86499d-d594-4605-9b06-8cf154059d8
 ### 
 
 
-DELETE http://localhost:3002/user_management
+DELETE http://localhost:3000/user_management

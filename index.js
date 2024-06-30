@@ -29,7 +29,7 @@ const initialize_DataBase_and_Server = async () => {
       driver: sqlite3.Database,
     });
     server_instance.listen(3000, () => {
-      console.log("sever is running on http://localhost:3002");
+      console.log("sever is running on http://localhost:3000");
     });
   } catch (error) {
     console.log(`DataBase Error ${error.message}`);

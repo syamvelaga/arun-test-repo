@@ -5,12 +5,12 @@ POST  http://localhost:3000/user_management/
 Content-Type: application/json
 
 {
-     "id": "1f86499d-d594-4605-9b06-8cf154059d8d",
-    "name": "Panoti",
+     "id": "1f86499d-d594-4605-9b06-8cf154059d8w",
+    "name": "syam",
     "DOB": "2024-06-01",
     "contact_no": "123454321",
-    "email": "panoti@gmai.com",
-    "user_description": "I am Panoti"
+    "email": "syam@gmai.com",
+    "user_description": "I am Syam"
 }
 
 ###
